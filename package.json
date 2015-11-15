@@ -1,6 +1,6 @@
 {
-  "title": "freememory2",
-  "name": "Free Memory 2.0",
+  "title": "Free Memory 2.0",
+  "name": "freememory2",
   "version": "0.0.1",
   "description": "An add-on to perform Free memory operations without visiting about:memory.",
   "main": "index.js",
@@ -10,9 +10,7 @@
     "fennec": ">=38.0a1"
   },
   "license": "MPL",
-  "dependencies": {
-    "jpm": "^1.0.3"
-  },
+  "dependencies": {},
   "permissions": {
     "private-browsing": true
   },
@@ -84,5 +82,6 @@
       "title": "Timer",
       "value": 0
     }
-  ]
+  ],
+  "devDependencies": {}
 }
