@@ -1,0 +1,88 @@
+{
+  "title": "freememory2",
+  "name": "Free Memory 2.0",
+  "version": "0.0.1",
+  "description": "An add-on to perform Free memory operations without visiting about:memory.",
+  "main": "index.js",
+  "author": "Sunny (darkowlzz) <me@darkowlzz.space>",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MPL",
+  "dependencies": {
+    "jpm": "^1.0.3"
+  },
+  "permissions": {
+    "private-browsing": true
+  },
+  "preferences": [
+    {
+      "name": "hotkey",
+      "description": "Enable or Disable hotkeys.",
+      "type": "bool",
+      "title": "Hotkey (Alt + M [Default])",
+      "value": true
+    },
+    {
+      "name": "notify",
+      "description": "Disable or Enable notifications.",
+      "type": "bool",
+      "title": "Notifications",
+      "value": true
+    },
+    {
+      "name": "modifier",
+      "description": "Set a modifier key to use with the Hotkey.",
+      "type": "menulist",
+      "title": "Modifier Key",
+      "value": "alt",
+      "options": [
+        {
+          "value": "shift",
+          "label": "shift"
+        },
+        {
+          "value": "alt",
+          "label": "alt"
+        },
+        {
+          "value": "control",
+          "label": "control"
+        },
+        {
+          "value": "accel",
+          "label": "accel"
+        }
+      ]
+    },
+    {
+      "name": "key",
+      "description": "Set a key to use in Hotkey.",
+      "type": "string",
+      "title": "Key",
+      "value": "m"
+    },
+    {
+      "name": "height",
+      "description": "Set height of the panel.",
+      "type": "integer",
+      "title": "Panel Height",
+      "value": 170
+    },
+    {
+      "name": "width",
+      "description": "Set width of the panel.",
+      "type": "integer",
+      "title": "Panel Width",
+      "value": 190
+    },
+    {
+      "name": "timeout",
+      "description": "Timer for automatic memory clean up. Specify time in minutes.",
+      "type": "integer",
+      "title": "Timer",
+      "value": 0
+    }
+  ]
+}

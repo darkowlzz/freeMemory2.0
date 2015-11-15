@@ -1,0 +1,17 @@
+{
+  "name": "freemem",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "Sunny (darkowlzz) <me@darkowlzz.space>"
+  ],
+  "license": "MPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}
