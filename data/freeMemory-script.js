@@ -15,6 +15,7 @@ const HELP = "HELP";
 
 const ABOUTMEMORY = "about:memory";
 const UP = 38, DOWN = 40;
+const OPTIONS = 4;
 
 var focusIndex = 0;
 var optsMap = new WeakMap();
@@ -51,7 +52,7 @@ function getFocusIndex () {
 
 function moveDown () {
   var curFocus = getFocusIndex();
-  if (curFocus < 3) {
+  if (curFocus < OPTIONS) {
     options[curFocus+1].focus();
   }
 }
@@ -89,13 +90,11 @@ about_div.onclick = function() {
   //window.open(aboutMemory);
 }
 
-/*
 var help_div = document.getElementById("help");
 help_div.onclick = function() {
   addon.port.emit(CLICKED);
   addon.port.emit(HELP);
 }
-*/
 
 addon.port.on(OPEN, function() {
   var opt = document.getElementById("gc");

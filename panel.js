@@ -10,6 +10,8 @@ const GC = "GC";
 const CC = "CC";
 const MM = "MM";
 const ABOUTMEMORY = "about:memory";
+const HELP = "HELP";
+const HELPURI = "http://freememory.darkowlzz.space";
 
 // FreeMemPanel Class
 function FreeMemPanel (hideHandler) {
@@ -43,6 +45,11 @@ function FreeMemPanel (hideHandler) {
 
   this.panel.port.on(ABOUTMEMORY, function () {
     require("sdk/tabs").open(ABOUTMEMORY);
+    that.panel.hide();
+  });
+
+  this.panel.port.on(HELP, function () {
+    require("sdk/tabs").open(HELPURI);
     that.panel.hide();
   });
 
