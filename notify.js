@@ -23,10 +23,16 @@ function getNativeWindow() {
  * @param {String} app
  *    Name of the app, like 'Fennec', 'Firefox'.
  */
-function notify(message, app) {
+function notify(message, notifyType, app) {
   // If notification is disabled, return.
-  if (!sp.prefs["notify"]) {
-    return;
+  if (notifyType == notify.FREE) {
+    if (!sp.prefs["notify"]) {
+      return;
+    }
+  } else if (notifyType == notify.PRE) {
+    if (!sp.prefs["preNotify"]) {
+      return;
+    };
   }
 
   // Depending upon the app, generate native notifications.
@@ -42,4 +48,7 @@ function notify(message, app) {
     });
   }
 }
+notify.FREE = 1;
+notify.PRE = 2;
+
 exports.notify = notify;

@@ -18,7 +18,7 @@ function FreeMemory(app) {
   const CCcompleted = "Cycle collection completed";
   const MMcompleted = "Memory Minimization completed";
 
-  // Get Observer Service to notify various listeners later. 
+  // Get Observer Service to notify various listeners later.
   let os = Cc['@mozilla.org/observer-service;1']
            .getService(Ci.nsIObserverService);
 
@@ -35,7 +35,7 @@ function FreeMemory(app) {
     gc: () => {
       os.notifyObservers(null, 'child-gc-request', null);
       Cu.forceGC();
-      notify(GCcompleted, app);
+      notify(GCcompleted, notify.FREE, app);
     },
 
     cc: () => {
@@ -43,12 +43,12 @@ function FreeMemory(app) {
       window.QueryInterface(Ci.nsIInterfaceRequestor)
             .getInterface(Ci.nsIDOMWindowUtils)
             .cycleCollect();
-      notify(CCcompleted, app);
+      notify(CCcompleted, notify.FREE, app);
     },
 
     mm: () => {
       os.notifyObservers(null, 'child-mmu-request', null);
-      gMgr.minimizeMemoryUsage(() => notify(MMcompleted, app));
+      gMgr.minimizeMemoryUsage(() => notify(MMcompleted, notify.FREE, app));
     }
   }
 }

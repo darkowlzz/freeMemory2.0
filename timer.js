@@ -7,6 +7,7 @@ const time = require('sdk/timers');
 const sp = require('sdk/simple-prefs');
 const ss = require('sdk/simple-storage');
 const { FreeMemory } = require('freememory');
+const { notify } = require('notify');
 
 const minuteMultiplier = 1000 * 60;
 
@@ -30,6 +31,7 @@ function Timer(app) {
     ss.storage.timeout = sp.prefs['timeout'];
 
     let callback = function () {
+      notify("Memory Minimization started", notify.PRE);
       freeMemory.mm();
       tim();
     }

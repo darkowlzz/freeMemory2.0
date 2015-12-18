@@ -26,7 +26,14 @@
       "name": "notify",
       "description": "Disable or Enable notifications.",
       "type": "bool",
-      "title": "Notifications",
+      "title": "Memory Freeup Notification",
+      "value": true
+    },
+    {
+      "name": "preNotify",
+      "description": "Disable or Enable pre-freeup notification.",
+      "type": "bool",
+      "title": "Pre Freeup Notification",
       "value": true
     },
     {
